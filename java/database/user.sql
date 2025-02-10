@@ -2,24 +2,25 @@
 -- This script creates the database users and grants them the necessary permissions
 -- ********************************************************************************
 
-CREATE USER final_capstone_owner
-WITH PASSWORD 'finalcapstone';
+--GFV NOTE:  Margaret commented out the creation of the owner and has this only set up the appuser.4r
+CREATE USER weather_app_db_owner
+WITH PASSWORD 'weatherisgud';
 
 GRANT ALL
 ON ALL TABLES IN SCHEMA public
-TO final_capstone_owner;
+TO weather_app_db_owner;
 
 GRANT ALL
 ON ALL SEQUENCES IN SCHEMA public
-TO final_capstone_owner;
+TO weather_app_db_owner;
 
-CREATE USER final_capstone_appuser
-WITH PASSWORD 'finalcapstone';
+CREATE USER weather_app_db_appuser
+WITH PASSWORD 'password';
 
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON ALL TABLES IN SCHEMA public
-TO final_capstone_appuser;
+TO weather_app_db_appuser;
 
 GRANT USAGE, SELECT
 ON ALL SEQUENCES IN SCHEMA public
-TO final_capstone_appuser;
+TO weather_app_db_appuser;

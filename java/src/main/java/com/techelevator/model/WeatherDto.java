@@ -11,13 +11,13 @@ public class WeatherDto {
     private double temperature;
     private double feelsLike;
     private int humidity;
-
     private String description;
     private String icon;
     private String name;
 
     public WeatherDto(int weatherId, int userId, int zipcode, LocalDate date, double temperature,
-                      double feelsLike, int humidity, String description, String name) {
+                      double feelsLike, int humidity, String description,
+                      String icon, String name) {
         this.weatherId = weatherId;
         this.userId = userId;
         this.zipcode = zipcode;
@@ -26,13 +26,17 @@ public class WeatherDto {
         this.feelsLike = feelsLike;
         this.humidity = humidity;
         this.description = description;
-       // this.icon = icon;
+        this.icon = icon;
         this.name = name;
     }
 
-   // public String getIcon() { return icon;}
+    public String getIcon() {
+        return icon;
+    }
 
-    public void setIcon(String icon) { this.icon = icon; }
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
     // add for Spring!
     public WeatherDto() {
@@ -101,7 +105,6 @@ public class WeatherDto {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public String getName() {
         return name;

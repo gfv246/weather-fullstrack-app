@@ -17,9 +17,10 @@ import java.security.Principal;
 @RestController
 @CrossOrigin
 public class WeatherController {
-    // could put a constructor in here, but using @Autowired will let Spring hook it up
-    @Autowired // lets spring wire together our @Service and annotated file
+
+    @Autowired // this lets spring wire together our @Service annotated file
     private WeatherService weatherService;
+
     @Autowired
     private UserDao userDao;
 
@@ -30,7 +31,6 @@ public class WeatherController {
 //        User user = userDao.getUserByUsername(principal.getName());
         LatLon latLon = weatherService.getLatLong(zip);
 
-        //return weatherService.getWeather(latLon, 0); //user.getId());
-        return null;  //commented above out so I can do Sunday night push without errors.
+        return weatherService.getWeather(latLon, 0); //user.getId());
     }
 }

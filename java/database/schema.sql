@@ -11,19 +11,17 @@ CREATE TABLE users (
 );
 
 CREATE TABLE weather (
-   weather_id serial PRIMARY KEY,
-   user_id int,
-   zipcode int,
-   name varchar(255),
-   weather_date DATE,
-   temp numeric(8, 4),
-   feels_like numeric(8, 4),
-   humidity int,
-   description varchar(255),
-   CONSTRAINT FK_weather_users FOREIGN KEY (user_id)
-   REFERENCES users (user_id)
+    weather_id serial PRIMARY KEY,
+    user_id int,
+    zipcode int,
+    name varchar(255),
+    weather_date DATE,
+    temp numeric(8, 4),
+    feels_like numeric(8, 4),
+    humidity int,
+    description varchar(255),
+    CONSTRAINT FK_weather_users FOREIGN KEY (user_id)
+    REFERENCES users (user_id)
 );
-
-
 
 COMMIT TRANSACTION;
